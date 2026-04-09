@@ -16,8 +16,8 @@ export const ProductDetail: React.FC = () => {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-        <Button asChild className="bg-primary text-black font-bold">
-          <Link to="/shop">Volver a la tienda</Link>
+        <Button render={<Link to="/shop" />} className="bg-primary text-black font-bold">
+          Volver a la tienda
         </Button>
       </div>
     );
@@ -25,10 +25,10 @@ export const ProductDetail: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <Button variant="ghost" asChild className="mb-8 text-neutral-400 hover:text-white">
-        <Link to="/shop">
+      <Button variant="ghost" render={<Link to="/shop" />} className="mb-8 text-neutral-400 hover:text-white">
+        <div className="flex items-center">
           <ArrowLeft className="w-4 h-4 mr-2" /> Volver a la tienda
-        </Link>
+        </div>
       </Button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -54,7 +54,7 @@ export const ProductDetail: React.FC = () => {
               {product.name}
             </h1>
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-3xl font-black text-primary">${product.price.toFixed(2)}</span>
+              <span className="text-3xl font-black text-primary">L.{product.price.toFixed(2)}</span>
               <Badge variant="outline" className="border-neutral-800 text-neutral-400">
                 En Stock: {product.stock} unidades
               </Badge>

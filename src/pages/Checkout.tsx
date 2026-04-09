@@ -29,8 +29,8 @@ export const Checkout: React.FC = () => {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-2xl font-bold mb-4">Tu carrito está vacío</h2>
-        <Button asChild className="bg-primary text-black font-bold">
-          <Link to="/shop">Ir a la tienda</Link>
+        <Button render={<Link to="/shop" />} className="bg-primary text-black font-bold">
+          Ir a la tienda
         </Button>
       </div>
     );
@@ -55,8 +55,8 @@ export const Checkout: React.FC = () => {
           <p className="text-neutral-400 max-w-md">
             Gracias por tu compra. Hemos enviado los detalles a tu correo electrónico. Tu pedido llegará en 24-48 horas.
           </p>
-          <Button asChild className="bg-primary text-black font-bold px-8">
-            <Link to="/">Volver al Inicio</Link>
+          <Button render={<Link to="/" />} className="bg-primary text-black font-bold px-8">
+            Volver al Inicio
           </Button>
         </div>
       ) : (
@@ -165,7 +165,7 @@ export const Checkout: React.FC = () => {
                   {cart.map(item => (
                     <div key={item.id} className="flex justify-between text-sm">
                       <span className="text-neutral-400">{item.quantity}x {item.name}</span>
-                      <span className="font-bold">${(item.price * item.quantity).toFixed(2)}</span>
+                      <span className="font-bold">L.{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
                   ))}
                 </div>
@@ -173,7 +173,7 @@ export const Checkout: React.FC = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-neutral-500">Subtotal</span>
-                    <span>${totalPrice.toFixed(2)}</span>
+                    <span>L.{totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-neutral-500">Envío</span>
@@ -182,7 +182,7 @@ export const Checkout: React.FC = () => {
                   <Separator className="bg-neutral-800" />
                   <div className="flex justify-between text-lg font-black">
                     <span className="text-white">TOTAL</span>
-                    <span className="text-primary">${totalPrice.toFixed(2)}</span>
+                    <span className="text-primary">L.{totalPrice.toFixed(2)}</span>
                   </div>
                 </div>
               </CardContent>

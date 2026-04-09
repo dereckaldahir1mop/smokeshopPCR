@@ -47,15 +47,13 @@ export const Navbar: React.FC = () => {
           </Button>
           
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="relative text-neutral-400 hover:text-primary">
-                <ShoppingCart className="w-4 h-4" />
-                {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 flex items-center justify-center bg-primary text-black text-[8px] font-bold rounded-full">
-                    {totalItems}
-                  </span>
-                )}
-              </Button>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="relative text-neutral-400 hover:text-primary" />}>
+              <ShoppingCart className="w-4 h-4" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 flex items-center justify-center bg-primary text-black text-[8px] font-bold rounded-full">
+                  {totalItems}
+                </span>
+              )}
             </SheetTrigger>
             <SheetContent className="bg-background border-primary/10 text-foreground w-full sm:max-w-md">
               <SheetHeader>
@@ -68,8 +66,8 @@ export const Navbar: React.FC = () => {
                       <ShoppingCart className="w-6 h-6 opacity-20" />
                     </div>
                     <p className="font-serif italic">Su colección está vacía</p>
-                    <Button asChild variant="outline" className="border-primary/20 rounded-none tracking-widest text-xs">
-                      <Link to="/shop">VER COLECCIÓN</Link>
+                    <Button render={<Link to="/shop" />} variant="outline" className="border-primary/20 rounded-none tracking-widest text-xs">
+                      VER COLECCIÓN
                     </Button>
                   </div>
                 ) : (
@@ -83,7 +81,7 @@ export const Navbar: React.FC = () => {
                             </div>
                             <div className="flex-1 min-w-0 flex flex-col justify-center">
                               <h4 className="text-sm font-serif italic text-white truncate mb-1">{item.name}</h4>
-                              <p className="text-[10px] font-sans tracking-widest text-primary mb-4">${item.price.toFixed(2)}</p>
+                              <p className="text-[10px] font-sans tracking-widest text-primary mb-4">L.{item.price.toFixed(2)}</p>
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center border border-primary/10">
                                   <button 
@@ -111,10 +109,10 @@ export const Navbar: React.FC = () => {
                     <div className="mt-auto pt-8 border-t border-primary/10">
                       <div className="flex items-center justify-between mb-6">
                         <span className="text-[10px] font-sans tracking-[0.3em] text-neutral-500 uppercase">Total</span>
-                        <span className="text-2xl font-serif text-primary">${totalPrice.toFixed(2)}</span>
+                        <span className="text-2xl font-serif text-primary">L.{totalPrice.toFixed(2)}</span>
                       </div>
-                      <Button className="w-full gold-gradient text-black font-bold rounded-none h-14 tracking-[0.2em] text-xs" asChild>
-                        <Link to="/checkout">PROCEDER AL PAGO</Link>
+                      <Button className="w-full gold-gradient text-black font-bold rounded-none h-14 tracking-[0.2em] text-xs" render={<Link to="/checkout" />}>
+                        PROCEDER AL PAGO
                       </Button>
                     </div>
                   </>
@@ -124,10 +122,8 @@ export const Navbar: React.FC = () => {
           </Sheet>
 
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-neutral-400">
-                <Menu className="w-4 h-4" />
-              </Button>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden text-neutral-400" />}>
+              <Menu className="w-4 h-4" />
             </SheetTrigger>
             <SheetContent side="left" className="bg-background border-primary/10 text-foreground">
               <SheetHeader>

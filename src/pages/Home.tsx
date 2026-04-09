@@ -45,11 +45,11 @@ export const Home: React.FC = () => {
                Descubre instrumentos de fumar sofisticados para verdaderos conocedores
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button size="lg" className="gold-gradient text-black hover:opacity-90 font-bold px-12 h-14 rounded-none tracking-widest" asChild>
-                <Link to="/shop">EXPLORAR COLECCIÓN</Link>
+              <Button size="lg" className="gold-gradient text-black hover:opacity-90 font-bold px-12 h-14 rounded-none tracking-widest" render={<Link to="/shop" />}>
+                EXPLORAR COLECCIÓN
               </Button>
-              <Button size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 px-12 h-14 rounded-none tracking-widest" asChild>
-                <Link to="/about">NUESTRA HERENCIA</Link>
+              <Button size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 px-12 h-14 rounded-none tracking-widest" render={<Link to="/about" />}>
+                NUESTRA HERENCIA
               </Button>
             </div>
           </motion.div>
@@ -88,10 +88,10 @@ export const Home: React.FC = () => {
             <span className="text-primary font-sans tracking-[0.3em] text-[10px] uppercase mb-4 block">Selección Curada</span>
             <h2 className="text-5xl md:text-6xl font-serif text-white uppercase tracking-tighter">La Serie <span className="italic">Signature</span></h2>
           </div>
-          <Button variant="link" className="text-primary font-sans tracking-widest text-xs uppercase group p-0" asChild>
-            <Link to="/shop" className="flex items-center gap-3">
+          <Button variant="link" className="text-primary font-sans tracking-widest text-xs uppercase group p-0" render={<Link to="/shop" />}>
+            <div className="flex items-center gap-3">
               Ver Todas las Obras Maestras <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-            </Link>
+            </div>
           </Button>
         </div>
         

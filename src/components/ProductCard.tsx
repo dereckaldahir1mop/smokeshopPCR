@@ -31,10 +31,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-          <Button size="icon" variant="secondary" className="rounded-full bg-white/90 text-black hover:bg-primary hover:text-black transition-all duration-300 translate-y-4 group-hover:translate-y-0" asChild>
-            <Link to={`/product/${product.id}`}>
-              <Eye className="w-4 h-4" />
-            </Link>
+          <Button size="icon" variant="secondary" className="rounded-full bg-white/90 text-black hover:bg-primary hover:text-black transition-all duration-300 translate-y-4 group-hover:translate-y-0" render={<Link to={`/product/${product.id}`} />}>
+            <Eye className="w-4 h-4" />
           </Button>
           <Button 
             size="icon" 
@@ -55,7 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className="font-serif text-xl text-white mb-2 group-hover:italic transition-all duration-500">
           <Link to={`/product/${product.id}`}>{product.name}</Link>
         </h3>
-        <p className="text-primary font-sans font-light tracking-widest text-sm">${product.price.toFixed(2)}</p>
+        <p className="text-primary font-sans font-light tracking-widest text-sm">L.{product.price.toFixed(2)}</p>
       </CardContent>
     </Card>
   );

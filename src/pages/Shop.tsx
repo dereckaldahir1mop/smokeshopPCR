@@ -79,10 +79,8 @@ export const Shop: React.FC = () => {
           </div>
           
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-primary">
-                <SlidersHorizontal className="w-4 h-4" />
-              </Button>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden text-primary" />}>
+              <SlidersHorizontal className="w-4 h-4" />
             </SheetTrigger>
             <SheetContent className="bg-background border-primary/10 text-foreground">
               <SheetHeader>

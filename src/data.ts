@@ -64,7 +64,6 @@ export const PRODUCTS: Product[] = [
     description: 'Increíble capacidad de 36000 caladas con pantalla LED inteligente. Tecnología de duales sabores y diseño icónico.',
     price: 900.00,
     category: 'vaporizers',
-    image: 'https://shop.vape.hk/wp-content/uploads/2025/06/VPLUS_36000_5_1024x.jpg',
     image: 'https://www.ksdvapor.com/uploads/43866/double-flavors-vape-36000-puff7d082.webp',
     stock: 20,
     featured: true,
